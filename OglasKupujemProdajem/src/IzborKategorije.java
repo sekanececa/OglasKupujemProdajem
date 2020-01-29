@@ -12,22 +12,14 @@ public class IzborKategorije {
 	}
 				
 	public static void setStvarRadioButton(WebDriver driver) {	
-		getStvarRadioButton(driver).click();;
+		getStvarRadioButton(driver).click();
 	}
 	
-	//Kategorija padajuci meni
-	public static WebElement getKategorija(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//div[@id='categorySelection']//span[@class='labelHolder'][contains(text(),'Izaberite')]"));
-		return element;
-	}
-				
-	public static void setKategorija(WebDriver driver) {	
-		getKategorija(driver).click();
-	}
+	
 	
 	//Kategorija Namestaj unos teksta	
 	public static WebElement getKategorijaDropDown(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//div[@id='categorySelection']//div[@class='uiMenuButton']//div[@class='uiMenuButtonSelectionHolder']//div[@class='uiInlineBlock uiMenuHolder']//div//input"));
+		element=driver.findElement(By.cssSelector("body.pt-sans:nth-child(2) div.clearfix div.new-ad-form.oglas-type-sell.oglas-kind-goods:nth-child(14) div.clearfix div.table.with-border div.row.vertical-padding.no-border-bottom:nth-child(3) div.col-4-5 div.form-field div.uiInlineBlock.opened:nth-child(1) div.uiMenuButton div.uiMenuButtonSelectionHolder div.uiInlineBlock.uiMenuHolder div:nth-child(3) > input:nth-child(1)"));
 		return element;
 	}
 				
@@ -42,20 +34,10 @@ public class IzborKategorije {
 	}
 					
 	public static void setKategorijaNamestaj(WebDriver driver) {	
-		getKategorijaNamestaj(driver).click();;
+		getKategorijaNamestaj(driver).click();
 	}
 	
 	
-	//Grupa padajuci meni
-	public static WebElement getGrupa(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//span[@class='labelHolder'][contains(text(),'Grupa')]"));
-		return element;
-	}
-					
-	public static void setGrupa(WebDriver driver) {	
-		getGrupa(driver).click();
-	}
-		
 	//Grupa unos teksta
 	public static WebElement getGrupaDropDown(WebDriver driver) {		
 		element=driver.findElement(By.xpath("//div[@id='groupSelection']//div[@class='uiMenuButton']//div[@class='uiMenuButtonSelectionHolder']//div[@class='uiInlineBlock uiMenuHolder']//div//input"));
@@ -72,7 +54,7 @@ public class IzborKategorije {
 	}
 						
 	public static void setGrupaStoloviISTolice(WebDriver driver) {	
-		getGrupaStoloviISTolice(driver).click();;
+		getGrupaStoloviISTolice(driver).click();
 	}
 }
 
