@@ -1,6 +1,9 @@
+//import org.openqa.selenium.Keys;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+//import org.openqa.selenium.interactions.Actions;
+//import org.openqa.selenium.interactions.Actions;
 
 import utility.Constant;;
 
@@ -48,11 +51,26 @@ public class Form {
 		UnosOglasa.setNazivOglasaInput(driver);
 		UnosOglasa.setKoriscenoRadioButton(driver);
 		UnosOglasa.setCenaInput(driver);
+		Thread.sleep(1000);
 		UnosOglasa.setERadioButton(driver);
 		
+	
 		Thread.sleep(1000);
-		UnosOglasa.setTekstOglasaInput(driver);
+		UnosOglasa.actionkeysDown(driver);
+	
+		Thread.sleep(3000);
 		
+		//ne radi
+		//UnosOglasa.setDodajSliku(driver);
+		
+		//nije potreban unos licnih podatak automatski su uneti u aplikaciji
+		//UnosOglasa.setMestoGradDropDown(driver);
+		//UnosOglasa.setBorDropDown(driver);
+		UnosOglasa.setSledeciButtonn(driver);
+		Thread.sleep(5000);
+		
+		IzborPromocije.setStandardnaVidljivostRadioButton(driver);
+		IzborPromocije.setSledeceButtonn(driver);
 		driver.quit();
 
         }

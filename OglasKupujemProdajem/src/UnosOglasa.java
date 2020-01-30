@@ -2,7 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Actions;
+
 
 public class UnosOglasa {
 	private static WebElement element = null;
@@ -35,7 +36,7 @@ public class UnosOglasa {
 	}
 					
 	public static void setKoriscenoRadioButton(WebDriver driver) {	
-		getKoriscenoRadioButton(driver).sendKeys(Keys.RETURN);
+		getKoriscenoRadioButton(driver).click();
 	}
 	
 	//Cena
@@ -55,21 +56,70 @@ public class UnosOglasa {
 	}
 					
 	public static void setERadioButton(WebDriver driver) {	
-		getERadioButton(driver).sendKeys(Keys.RETURN);
+		getERadioButton(driver).click();
+		
+	}
+	
+	//Put do Inputa za Oglas
+	public static void actionkeysDown(WebDriver driver) {
+		Actions actions = new Actions(driver);
+		actions.sendKeys(driver.findElement(By.xpath("//input[contains(@id,'data[price_fixed]')]")),Keys.TAB).
+		sendKeys(driver.findElement(By.xpath("//input[@id='exchange_yes']")),Keys.TAB).
+		sendKeys(("Stolica je kupljena u Budimpesti u antikarnici. Restaurirana je 2009. Mebl je jako ocuvan i kvalitetan. Prodajemo je jer prelazimo u drugi, manji stan."),Keys.TAB).
+		//sendKeys(Keys.RETURN).
+		build().perform();	
 	}
 	
 	//Tekst Oglasa
-		public static WebElement getTekstOglasaInput(WebDriver driver) {
-			//Actions action = new Actions(driver);
-			//action.keyDown(Keys.TAB).build().perform();
-			//action.keyDown(Keys.TAB).build().perform();
-			//action.keyDown(Keys.TAB).build().perform();
-			element=driver.findElement(By.id("tinymce"));
-			return element;
+	public static WebElement getTekstOglasaInput(WebDriver driver) {	
+		element = driver.findElement(By.cssSelector(".mceContentBody "));	
+		return element;
 			
-		}
+	}
 						
-		public static void setTekstOglasaInput(WebDriver driver) {	
-			getTekstOglasaInput(driver).sendKeys("Stolica je kupljena u Budimpesti u antikarnici. Restaurirana je 2009. Mebl je jako ocuvan i kvalitetan. Prodajemo je jer prelazimo u drugi, manji stan.");
-		}
-}
+	public static void setTekstOglasaInput(WebDriver driver) {	
+		getTekstOglasaInput(driver).sendKeys("Stolica je kupljena u Budimpesti u antikarnici. Restaurirana je 2009. Mebl je jako ocuvan i kvalitetan. Prodajemo je jer prelazimo u drugi, manji stan.");
+	}
+	
+	//Dodavanje slike
+	public static WebElement getDodajSliku(WebDriver driver) {	
+		element = driver.findElement(By.id("addPhotoButtonInList"));	
+		return element;		
+	}
+	
+	public static void setDodajSliku(WebDriver driver) {
+		getDodajSliku(driver).sendKeys("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
+	}
+		
+
+	//MestoGrad
+	public static WebElement getMestoGradDropDown(WebDriver driver) {	
+		element = driver.findElement(By.xpath("//div[@id='locationSelection']//span[@class='labelHolder'][contains(text(),'Izaberite')]"));
+		return element;		
+	}
+	
+	public static void setMestoGradDropDown(WebDriver driver) {
+		getMestoGradDropDown(driver).click();;
+	}
+	
+	public static WebElement getBorDropDown(WebDriver driver) {	
+		element = driver.findElement(By.id("//div[@data-text='Bor']"));	
+		return element;		
+	}
+	
+	public static void setBorDropDown(WebDriver driver) {
+		getBorDropDown(driver).click();
+	}
+	
+	
+	//Button sledece
+	public static WebElement getSledeciButton(WebDriver driver) {	
+		element = driver.findElement(By.xpath("//div[@class='table with-border']//div[@class='adFormPostButtonHolder']//input[@class='submit-button']"));	
+		return element;		
+	}
+	
+	public static void setSledeciButtonn(WebDriver driver) {
+		getSledeciButton(driver).click();
+	}
+}	
+
