@@ -15,47 +15,38 @@ public class Form {
 		WebDriver driver=new ChromeDriver();
 		driver.get(Constant.URL);
 		
-		Thread.sleep(1000);
 		
 		NavBar.setLogInButton(driver);
 		
-		Thread.sleep(1000);
-		
+	
 		UlogujSe.setEmailInput(driver);
 		UlogujSe.setPasswordInput(driver);
 		UlogujSe.setLogInButton(driver);
 		
-		Thread.sleep(1000);
 		
 		MojKP.setPostaviOglasButton(driver);
 		
-		Thread.sleep(1000);
 		
-		IzborKategorije.setStvarRadioButton(driver);
-		Thread.sleep(1000);
-		
+		IzborKategorije.setStvarRadioButton(driver);	
 		//Kategorija
 		
 		IzborKategorije.setKategorijaDropDown(driver);
-		Thread.sleep(1000);
 		IzborKategorije.setKategorijaNamestaj(driver);
-		Thread.sleep(1000);
 		
 		//Grupa
 	
 		IzborKategorije.setGrupaDropDown(driver);
-		Thread.sleep(1000);
 		IzborKategorije.setGrupaStoloviISTolice(driver);
-		Thread.sleep(1000);
+		
+		
 		
 		UnosOglasa.setNazivOglasaInput(driver);
 		UnosOglasa.setKoriscenoRadioButton(driver);
 		UnosOglasa.setCenaInput(driver);
-		Thread.sleep(1000);
 		UnosOglasa.setERadioButton(driver);
 		
 	
-		Thread.sleep(1000);
+	
 		UnosOglasa.actionkeysDown(driver);
 	
 		Thread.sleep(3000);
@@ -67,10 +58,25 @@ public class Form {
 		//UnosOglasa.setMestoGradDropDown(driver);
 		//UnosOglasa.setBorDropDown(driver);
 		UnosOglasa.setSledeciButtonn(driver);
-		Thread.sleep(5000);
-		
+
+		Thread.sleep(3000);
 		IzborPromocije.setStandardnaVidljivostRadioButton(driver);
 		IzborPromocije.setSledeceButtonn(driver);
+		
+		Identifikacija.setVaseImeInput(driver);
+		Identifikacija.setPrezimeInput(driver);
+		Identifikacija.setMestoStanovanjaInput(driver);
+		Identifikacija.setUlicaIBrojInput(driver);
+		Identifikacija.setJMBGInput(driver);
+		Identifikacija.setJMBGInput(driver);
+		Identifikacija.setBrLicneKarteInput(driver);
+		Identifikacija.setMestoIzdavanjaLKInput(driver);
+		Identifikacija.setGarantujemTacnostRadioButton(driver);
+		Identifikacija.setPrihvatamPravilaRadioButton(driver);
+		
+		
+		//Postavka OGLASA
+		//Identifikacija.setPostaviteOglasButton(driver);
 		driver.quit();
 
         }

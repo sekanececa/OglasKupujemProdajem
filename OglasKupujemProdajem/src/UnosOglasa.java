@@ -3,6 +3,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class UnosOglasa {
@@ -10,8 +12,10 @@ public class UnosOglasa {
 	
 	
 	//Naslov oglasa
-	public static WebElement getNazivOglasaInput(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='data[name]']"));
+	public static WebElement getNazivOglasaInput(WebDriver driver) {	
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='data[name]']")));
+		//element=driver.findElement(By.xpath("//input[@id='data[name]']"));
 		return element;
 	}
 				
@@ -20,8 +24,10 @@ public class UnosOglasa {
 	}
 	
 	//Nudim RadioButton
-	public static WebElement getNudimRadioButton(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='ad_type_sell']"));
+	public static WebElement getNudimRadioButton(WebDriver driver) {	
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='ad_type_sell']")));
+		//element=driver.findElement(By.xpath("//input[@id='ad_type_sell']"));
 		return element;
 	}
 				
@@ -30,8 +36,10 @@ public class UnosOglasa {
 	}
 	
 	//Stanje - Korisceno RadioButton
-	public static WebElement getKoriscenoRadioButton(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='data[condition]used']"));
+	public static WebElement getKoriscenoRadioButton(WebDriver driver) {
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='data[condition]used']")));
+		//element=driver.findElement(By.xpath("//input[@id='data[condition]used']"));
 		return element;
 	}
 					
@@ -40,8 +48,10 @@ public class UnosOglasa {
 	}
 	
 	//Cena
-	public static WebElement getCenaInput(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='price_number']"));
+	public static WebElement getCenaInput(WebDriver driver) {	
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='price_number']")));
+		//element=driver.findElement(By.xpath("//input[@id='price_number']"));
 		return element;
 	}
 					
@@ -50,8 +60,10 @@ public class UnosOglasa {
 	}
 	
 	//Evro radio button
-	public static WebElement getERadioButton(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='currency_eur']"));
+	public static WebElement getERadioButton(WebDriver driver) {
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='currency_eur']")));
+		//element=driver.findElement(By.xpath("//input[@id='currency_eur']"));
 		return element;
 	}
 					
@@ -114,7 +126,9 @@ public class UnosOglasa {
 	
 	//Button sledece
 	public static WebElement getSledeciButton(WebDriver driver) {	
-		element = driver.findElement(By.xpath("//div[@class='table with-border']//div[@class='adFormPostButtonHolder']//input[@class='submit-button']"));	
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='table with-border']//div[@class='adFormPostButtonHolder']//input[@class='submit-button']")));
+		//element = driver.findElement(By.xpath("//div[@class='table with-border']//div[@class='adFormPostButtonHolder']//input[@class='submit-button']"));	
 		return element;		
 	}
 	

@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class IzborPromocije {
 	
@@ -8,8 +10,11 @@ public class IzborPromocije {
 	
 	
 	//Radio Button standardna vidljivost
-	public static WebElement getStandardnaVidljivostRadioButton(WebDriver driver) {		
-		element=driver.findElement(By.xpath("//input[@id='data[promo_type]none']"));
+	public static WebElement getStandardnaVidljivostRadioButton(WebDriver driver) {	
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='data[promo_type]none']")));
+		////input[contains(@id,'data[promo_type]none')]
+		//element=driver.findElement(By.xpath("//input[@id='data[promo_type]none']"));
 		return element;
 	}
 				
