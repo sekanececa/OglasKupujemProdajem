@@ -1,3 +1,10 @@
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -78,7 +85,6 @@ public class UnosOglasa {
 		actions.sendKeys(driver.findElement(By.xpath("//input[contains(@id,'data[price_fixed]')]")),Keys.TAB).
 		sendKeys(driver.findElement(By.xpath("//input[@id='exchange_yes']")),Keys.TAB).
 		sendKeys(("Stolica je kupljena u Budimpesti u antikarnici. Restaurirana je 2009. Mebl je jako ocuvan i kvalitetan. Prodajemo je jer prelazimo u drugi, manji stan."),Keys.TAB).
-		//sendKeys(Keys.RETURN).
 		build().perform();	
 	}
 	
@@ -95,12 +101,51 @@ public class UnosOglasa {
 	
 	//Dodavanje slike
 	public static WebElement getDodajSliku(WebDriver driver) {	
-		element = driver.findElement(By.id("addPhotoButtonInList"));	
-		return element;		
+		WebDriverWait wait=new WebDriverWait(driver,10);	
+		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("thumbHolder")));
+		//element = driver.findElement(By.xpath("//div[@id='addPhotoButtonInList']"));	
+		//return element;	
+		/*
+		Robot robot=new Robot();
+		robot.setAutoDelay(2000);
+		StringSelection stringSelectoion= new StringSelection("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelectoion, null);
+		robot.setAutoDelay(3000);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.setAutoDelay(3000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		*/
+		/*
+		 * 
+		 */
+		return element;
+		
+		
+
 	}
 	
-	public static void setDodajSliku(WebDriver driver) {
-		getDodajSliku(driver).sendKeys("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
+	public static void setDodajSliku(WebDriver driver) throws AWTException {
+		//getDodajSliku(driver).sendKeys("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
+		getDodajSliku(driver).click();
+		Robot robot=new Robot();
+		robot.setAutoDelay(2000);
+		StringSelection stringSelectoion= new StringSelection("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelectoion, null);
+		robot.setAutoDelay(3000);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.setAutoDelay(3000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		
 	}
 		
 

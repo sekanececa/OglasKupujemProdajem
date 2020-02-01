@@ -1,5 +1,7 @@
 //import org.openqa.selenium.Keys;
 //import org.openqa.selenium.By;
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.interactions.Actions;
@@ -9,7 +11,7 @@ import utility.Constant;;
 
 public class Form {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, AWTException {
 		// TODO Auto-generated method stub
 
 		WebDriver driver=new ChromeDriver();
@@ -44,22 +46,19 @@ public class Form {
 		UnosOglasa.setKoriscenoRadioButton(driver);
 		UnosOglasa.setCenaInput(driver);
 		UnosOglasa.setERadioButton(driver);
-		
-	
-	
 		UnosOglasa.actionkeysDown(driver);
 	
-		Thread.sleep(3000);
 		
-		//ne radi
-		//UnosOglasa.setDodajSliku(driver);
+		
+		
+		UnosOglasa.setDodajSliku(driver);
 		
 		//nije potreban unos licnih podatak automatski su uneti u aplikaciji
 		//UnosOglasa.setMestoGradDropDown(driver);
 		//UnosOglasa.setBorDropDown(driver);
 		UnosOglasa.setSledeciButtonn(driver);
-
 		Thread.sleep(3000);
+		
 		IzborPromocije.setStandardnaVidljivostRadioButton(driver);
 		IzborPromocije.setSledeceButtonn(driver);
 		
