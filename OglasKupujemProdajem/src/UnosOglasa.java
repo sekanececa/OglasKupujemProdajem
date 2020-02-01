@@ -103,26 +103,6 @@ public class UnosOglasa {
 	public static WebElement getDodajSliku(WebDriver driver) {	
 		WebDriverWait wait=new WebDriverWait(driver,10);	
 		element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("thumbHolder")));
-		//element = driver.findElement(By.xpath("//div[@id='addPhotoButtonInList']"));	
-		//return element;	
-		/*
-		Robot robot=new Robot();
-		robot.setAutoDelay(2000);
-		StringSelection stringSelectoion= new StringSelection("C:\\Users\\User\\Desktop\\OglasKupujemProdajem\\187785124.jpg");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelectoion, null);
-		robot.setAutoDelay(3000);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.setAutoDelay(3000);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		*/
-		/*
-		 * 
-		 */
 		return element;
 		
 		
